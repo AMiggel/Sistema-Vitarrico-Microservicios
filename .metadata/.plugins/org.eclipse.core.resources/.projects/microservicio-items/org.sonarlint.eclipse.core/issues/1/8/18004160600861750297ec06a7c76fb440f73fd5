@@ -1,0 +1,7 @@
+
+‹squid:S2293K"YReplace the type specification in this constructor call with the diamond operator ("<>").(ö×ÞëýÿÿÿÿHïRMINORZ
+CODE_SMELL
+xsquid:S4684O"@Replace this persistent entity with a simple POJO or DTO object.(ðÞëåÿÿÿÿÿHðRCRITICALZVULNERABILITY
+[squid:S1452A"&Remove usage of generic wildcard type.(„„†®úÿÿÿÿHñRCRITICALZ
+CODE_SMELL
+rsquid:S4684T"@Replace this persistent entity with a simple POJO or DTO object.(ý‘Ø@HîRCRITICALZVULNERABILITY

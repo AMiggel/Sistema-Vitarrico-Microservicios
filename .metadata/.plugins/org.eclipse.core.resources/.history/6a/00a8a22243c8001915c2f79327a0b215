@@ -1,0 +1,17 @@
+package co.com.vitarrico.app.facturacion.cliente;
+
+import java.util.List;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import co.com.vitarrico.app.commons.entidad.EntidadProducto;
+
+@FeignClient(name = "servicio-productos")
+public interface ProductoClienteRest {
+
+	//consume servicio del servicio producto
+	@GetMapping("/productos")
+	public List<EntidadProducto> listar();
+	
+}

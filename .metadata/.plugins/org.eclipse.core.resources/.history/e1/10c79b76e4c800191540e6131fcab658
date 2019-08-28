@@ -1,0 +1,41 @@
+package co.com.vitarrico.app.facturacion.modelo.feign;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Producto {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	
+	private String nombre;
+
+	private Double precio;
+
+	private Date fechaVencimiento;
+
+	private String tipoProducto;
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public Double getPrecio() {
+		return precio;
+	}
+
+	public Date getFechaVencimiento() {
+		return fechaVencimiento;
+	}
+
+	public String getTipoProducto() {
+		return tipoProducto;
+	}
+
+}

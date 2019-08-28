@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\antonio.marin\Documents\Projects\Proyecto de Grado\sistema-facturacion"/>
+			<item value="C:\Users\antonio.marin\Documents\Projects\Curso-Udemy-Microservicios-SpringBoot\microservicio-configuracion-servicios"/>
+			<item value="C:\Users\antonio.marin\Documents\Projects\Curso-Udemy-Microservicios-SpringBoot\microservicio-productos"/>
+			<item value="C:\Users\antonio.marin\Documents\Projects\Curso-Udemy-Microservicios-SpringBoot\microservicio-items"/>
+			<item value="C:\Users\antonio.marin\Documents\Projects\Curso-Udemy-Microservicios-SpringBoot\microservicio-api-gateway-zuul"/>
+			<item value="C:\Users\antonio.marin\Documents\Projects\Curso-Udemy-Microservicios-SpringBoot\microservicio-eureka-server"/>
+			<item value="C:\Users\antonio.marin\Documents\Projects\Curso-Udemy-Microservicios-SpringBoot\servicio-commons"/>
+			<item value="C:\Users\antonio.marin\Documents\Projects\Proyecto de Grado\springMVC-Facturacion-VItarrico-master"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ProductoClienteRest.java&apos; to &apos;microservicio-facturacion/src/main/java/co.com.vitarrico.app.facturacion.cliente&apos;&#x0D;&#x0A;- Original project: &apos;microservicio-items&apos;&#x0D;&#x0A;- Destination element: &apos;microservicio-facturacion/src/main/java/co.com.vitarrico.app.facturacion.cliente&apos;&#x0D;&#x0A;- Original element: &apos;co.com.unac.app.items.clientes.ProductoClienteRest.java&apos;" description="Copy compilation unit" destination="=microservicio-facturacion/src\/main\/java&lt;co.com.vitarrico.app.facturacion.cliente" element1="/src\/main\/java&lt;co.com.unac.app.items.clientes{ProductoClienteRest.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1566852526765" units="1" version="1.0"/>
+</session>

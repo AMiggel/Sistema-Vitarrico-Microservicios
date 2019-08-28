@@ -1,0 +1,5 @@
+package co.com.vitarrico.app.facturacion.dto;
+
+public class ItemFacturaDto {
+
+}

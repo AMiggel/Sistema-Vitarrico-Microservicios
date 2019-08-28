@@ -1,0 +1,34 @@
+package co.com.vitarrico.app.facturacion.modelo.feign;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Producto {
+
+	private String nombre;
+
+	private Double precio;
+
+	private Date fechaVencimiento;
+
+	private String tipoProducto;
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public Double getPrecio() {
+		return precio;
+	}
+
+	public Date getFechaVencimiento() {
+		return fechaVencimiento;
+	}
+
+	public String getTipoProducto() {
+		return tipoProducto;
+	}
+
+}

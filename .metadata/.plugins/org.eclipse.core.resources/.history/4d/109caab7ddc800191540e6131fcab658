@@ -1,0 +1,80 @@
+package co.com.vitarrico.app.facturacion.modelo.feign;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+public class Producto {
+
+	private String nombre;
+
+	private Double precio;
+
+	private Date fechaVencimiento;
+
+	private String tipoProducto;
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(Double precio) {
+		this.precio = precio;
+	}
+
+	public Date getFechaCreacion() {
+		return fechaCreacion;
+	}
+
+	public void setFechaCreacion(Date createAt) {
+		this.fechaCreacion = createAt;
+	}
+
+	public Date getFechaVencimiento() {
+		return fechaVencimiento;
+	}
+
+	public void setFechaVencimiento(Date fechaVencimiento) {
+		this.fechaVencimiento = fechaVencimiento;
+	}
+
+	public String getTipoProducto() {
+		return tipoProducto;
+	}
+
+	public void setTipoProducto(String tipoProducto) {
+		this.tipoProducto = tipoProducto;
+	}
+
+	public int getCantidadDisponible() {
+		return cantidadDisponible;
+	}
+
+	public void setCantidadDisponible(int cantidadDisponible) {
+		this.cantidadDisponible = cantidadDisponible;
+	}
+
+	public int getCantidadCreada() {
+		return cantidadCreada;
+	}
+
+	public void setCantidadCreada(int cantidadCreada) {
+		this.cantidadCreada = cantidadCreada;
+	}
+
+}

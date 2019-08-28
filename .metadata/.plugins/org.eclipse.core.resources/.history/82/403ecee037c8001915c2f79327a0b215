@@ -1,0 +1,5 @@
+package co.com.vitarrico.app.inventario.dominio.servicio;
+
+public interface IServicioInventario {
+
+}

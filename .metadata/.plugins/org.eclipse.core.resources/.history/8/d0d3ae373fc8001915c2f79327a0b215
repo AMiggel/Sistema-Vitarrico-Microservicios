@@ -1,0 +1,7 @@
+package co.com.vitarrico.app.facturacion.repositorio.factura;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RepositorioFactura extends JpaRepository<EntidadProducto, Long>{
+
+}

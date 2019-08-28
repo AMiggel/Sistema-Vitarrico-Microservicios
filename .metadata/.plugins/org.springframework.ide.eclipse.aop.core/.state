@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="microservicio-facturacion"/>
+<aop-project name="microservicio-productos"/>
+<aop-project name="springMVC-Facturacion-VItarrico-master"/>
+<aop-project name="microservicio-inventario"/>
+<aop-project name="microservicio-items">
+<aspect-definition advice-class-name="com.netflix.hystrix.contrib.javanica.aop.aspectj.HystrixCommandAspect" advice-method-name="methodsAnnotatedWithHystrixCommand(org.aspectj.lang.ProceedingJoinPoint)" advice-type="AROUND" aspect-end-line-number="-1" aspect-name="hystrixCommandAspect" aspect-start-line-number="-1" factory-id="org.springframework.ide.eclipse.aop.core.annotationAspectDefinitionElementFactory" file="/microservicio-items/src/main/java/co/com/unac/app/items/MicroservicioItemsApplication.java" pointcut-expression="hystrixCommandAnnotationPointcut() || hystrixCollapserAnnotationPointcut()" proxy-target-class="true">
+<aop-reference advice-type="AROUND" bean="1:BeansModel|2:microservicio-items|3:java:co.com.unac.app.items.MicroservicioItemsApplication|8:scopedTarget.controladorItems:30" bean-file="/microservicio-items/src/main/java/co/com/unac/app/items/controlador/ControladorItems.java" bean-start-line="30" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/microservicio-items/src/main/java/co/com/unac/app/items/MicroservicioItemsApplication.java" source="=microservicio-items/C:\/Users\/antonio.marin\/.m2\/repository\/com\/netflix\/hystrix\/hystrix-javanica\/1.5.18\/hystrix-javanica-1.5.18.jar&lt;com.netflix.hystrix.contrib.javanica.aop.aspectj(HystrixCommandAspect.class[HystrixCommandAspect~methodsAnnotatedWithHystrixCommand~Lorg.aspectj.lang.ProceedingJoinPoint;" source-start-line="-1" target="=microservicio-items/src\/main\/java&lt;co.com.unac.app.items.controlador{ControladorItems.java[ControladorItems~detalle~QLong;~QInteger;" target-start-line="49"/>
+</aspect-definition>
+</aop-project>
+<aop-project name="microservicio-api-gateway-zuul"/>
+</aop-reference-model>

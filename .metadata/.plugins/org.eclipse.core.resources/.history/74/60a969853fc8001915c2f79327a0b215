@@ -1,0 +1,5 @@
+package co.com.vitarrico.app.facturacion.modelo;
+
+public class EntidadFactura {
+
+}

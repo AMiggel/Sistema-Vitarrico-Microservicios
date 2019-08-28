@@ -1,0 +1,47 @@
+package co.com.vitarrico.app.facturacion.modelo.feign;
+
+import java.util.Date;
+
+public class Producto {
+
+	private String nombre;
+
+	private Double precio;
+
+	private Date fechaVencimiento;
+
+	private String tipoProducto;
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(Double precio) {
+		this.precio = precio;
+	}
+
+	public Date getFechaVencimiento() {
+		return fechaVencimiento;
+	}
+
+	public void setFechaVencimiento(Date fechaVencimiento) {
+		this.fechaVencimiento = fechaVencimiento;
+	}
+
+	public String getTipoProducto() {
+		return tipoProducto;
+	}
+
+	public void setTipoProducto(String tipoProducto) {
+		this.tipoProducto = tipoProducto;
+	}
+
+}

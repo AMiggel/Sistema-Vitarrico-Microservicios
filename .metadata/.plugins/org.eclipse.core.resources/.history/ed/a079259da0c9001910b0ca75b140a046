@@ -1,0 +1,12 @@
+package co.com.vitarrico.app.facturacion.dto;
+
+import java.util.Date;
+
+public class FacturaDto {
+
+	private String descripcion;
+
+	private String observacion;
+
+	private Date fechaCreacion;
+}

@@ -1,0 +1,71 @@
+package co.com.vitarrico.app.facturacion.dto;
+
+import java.util.Date;
+
+public class FacturaDto {
+
+	private String descripcion;
+
+	private String observacion;
+
+	private Date fechaCreacion;
+	
+	private String nombreProducto;
+	
+	private String precioProducto;
+	
+	private Long idProducto;
+	
+
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public String getObservacion() {
+		return observacion;
+	}
+
+	public void setObservacion(String observacion) {
+		this.observacion = observacion;
+	}
+
+	public Date getFechaCreacion() {
+		return fechaCreacion;
+	}
+
+	public void setFechaCreacion(Date fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
+	}
+
+	public String getNombreProducto() {
+		return nombreProducto;
+	}
+
+	public void setNombreProducto(String nombreProducto) {
+		this.nombreProducto = nombreProducto;
+	}
+
+	public String getPrecioProducto() {
+		return precioProducto;
+	}
+
+	public void setPrecioProducto(String precioProducto) {
+		this.precioProducto = precioProducto;
+	}
+
+	public Long getIdProducto() {
+		return idProducto;
+	}
+
+	public void setIdProducto(Long idProducto) {
+		this.idProducto = idProducto;
+	}
+
+
+	
+}

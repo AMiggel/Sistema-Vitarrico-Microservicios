@@ -1,0 +1,47 @@
+package co.com.vitarrico.app.facturacion.dominio.servicio.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import co.com.vitarrico.app.facturacion.dominio.servicio.IServicioFactura;
+import co.com.vitarrico.app.facturacion.dominio.servicio.feign.ProductoClienteRest;
+import co.com.vitarrico.app.facturacion.modelo.EntidadFactura;
+import co.com.vitarrico.app.facturacion.repositorio.factura.RepositorioFactura;
+
+@Service
+public class ServicioFacturaImpl implements IServicioFactura {
+
+	@Autowired
+	private RepositorioFactura repositorioFactura;
+	@Autowired
+	private ProductoClienteRest productoClienteRest;
+
+	@Override
+	public List<EntidadFactura> listar() {
+		return repositorioFactura.findAll();
+
+	}
+
+	@Override
+	public EntidadFactura crearFactura(EntidadFactura factura) {
+		return repositorioFactura.save(factura);
+	}
+
+	@Override
+	public EntidadFactura buscarFacturaPorId(Long id) {
+		return repositorioFactura.findById(id).orElse(null);
+	}
+
+	@Override
+	public void borrarFactura(Long id) {
+		repositorioFactura.deleteById(id);
+	}
+
+	@Override
+	public EntidadFactura modificarFactura(Long id, EntidadFactura factura) {
+		return null;
+	}
+
+}

@@ -1,0 +1,9 @@
+package co.com.vitarrico.app.facturacion.dominio.servicio.feign;
+
+public class Snippet {
+	public static void main(String[] args) {
+		import javax.persistence.Table;
+		
+	}
+}
+
