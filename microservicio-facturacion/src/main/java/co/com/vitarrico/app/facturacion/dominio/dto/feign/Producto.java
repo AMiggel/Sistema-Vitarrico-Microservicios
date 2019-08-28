@@ -1,4 +1,4 @@
-package co.com.vitarrico.app.facturacion.modelo.feign;
+package co.com.vitarrico.app.facturacion.dominio.dto.feign;
 
 public class Producto {
 

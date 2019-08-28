@@ -2,7 +2,7 @@ package co.com.vitarrico.app.facturacion.dominio.servicio;
 
 import java.util.List;
 
-import co.com.vitarrico.app.facturacion.dominio.dto.FacturaDto;
+import co.com.vitarrico.app.facturacion.dominio.dto.factura.FacturaDto;
 import co.com.vitarrico.app.facturacion.persistencia.entidad.EntidadFactura;
 
 public interface IServicioFactura {

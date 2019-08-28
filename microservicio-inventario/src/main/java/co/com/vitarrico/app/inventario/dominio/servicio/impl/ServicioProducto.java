@@ -37,7 +37,9 @@ public class ServicioProducto implements IServicioProducto {
 
 	@Override
 	public EntidadProducto modificarProducto(Long id, EntidadProducto producto) {
-		return null;
+		EntidadProducto productoAModificar= buscarProductoPorId(id);
+		productoAModificar.setCantidadDisponible(producto.getCantidadDisponible());
+		return repositorioProducto.save(productoAModificar);
 	}
 
 }
