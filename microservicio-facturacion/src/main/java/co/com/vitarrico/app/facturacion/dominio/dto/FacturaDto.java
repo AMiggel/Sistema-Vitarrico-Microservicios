@@ -2,6 +2,7 @@ package co.com.vitarrico.app.facturacion.dominio.dto;
 
 import java.util.Date;
 
+//dto
 public class FacturaDto {
 
 	private String descripcion;

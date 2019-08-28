@@ -13,8 +13,6 @@ import co.com.vitarrico.app.facturacion.dominio.dto.FacturaDto;
 import co.com.vitarrico.app.facturacion.dominio.servicio.IServicioFactura;
 import co.com.vitarrico.app.facturacion.persistencia.entidad.EntidadFactura;
 
-
-
 @RestController
 public class ControladorFactura {
 

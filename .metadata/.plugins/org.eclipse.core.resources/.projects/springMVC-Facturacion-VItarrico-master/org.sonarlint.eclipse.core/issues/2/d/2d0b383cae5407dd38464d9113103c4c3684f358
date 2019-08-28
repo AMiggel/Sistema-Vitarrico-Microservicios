@@ -1,18 +1,0 @@
-
-‚squid:S1192H"MDefine a constant instead of duplicating this literal "factura/form" 3 times.(êÓƒÎþÿÿÿÿHðRCRITICALZ
-CODE_SMELL
-ƒsquid:S1192F"NDefine a constant instead of duplicating this literal "Crear Factura" 3 times.(˜„Á¢üÿÿÿÿHòRCRITICALZ
-CODE_SMELL
-ssquid:S3457i"AFormat specifiers should be used instead of string concatenation.(ƒúíŠûÿÿÿÿHôRMAJORZ
-CODE_SMELL
-†squid:S1192/"QDefine a constant instead of duplicating this literal "redirect:/listar" 3 times.(¾Û¸ÀùÿÿÿÿHíRCRITICALZ
-CODE_SMELL
-Žsquid:S2629i"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(ƒúíŠûÿÿÿÿHïRMAJORZ
-CODE_SMELL
-xsquid:S4684Q"@Replace this persistent entity with a simple POJO or DTO object.(™ÈàÈýÿÿÿÿHóRCRITICALZVULNERABILITY
-xsquid:CommentedOutCodeLine+"<This block of commented-out lines of code should be removed.(¼’â“HîRMAJORZ
-CODE_SMELL
-|squid:S11923"GDefine a constant instead of duplicating this literal "titulo" 4 times.(ÝÞ´þÿÿÿÿHõRCRITICALZ
-CODE_SMELL
-vsquid:S1192."FDefine a constant instead of duplicating this literal "error" 4 times.(ÂËæ·HñRCRITICALZ
-CODE_SMELL

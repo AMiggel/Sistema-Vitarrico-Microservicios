@@ -1,26 +1,0 @@
-
-{squid:S1192H"GDefine a constant instead of duplicating this literal "titulo" 5 times.(Ëû€ÚúÿÿÿÿHRCRITICALZ
-CODE_SMELL
-wsquid:S1192G"HDefine a constant instead of duplicating this literal "cliente" 3 times.(Äâ™HRCRITICALZ
-CODE_SMELL
-usquid:S1192C"FDefine a constant instead of duplicating this literal "error" 3 times.(ƒğ‘—HRCRITICALZ
-CODE_SMELL
-…squid:S1192D"QDefine a constant instead of duplicating this literal "redirect:/listar" 4 times.(¾Û¸ÀùÿÿÿÿHRCRITICALZ
-CODE_SMELL
-osquid:S2259:"EA "NullPointerException" could be thrown; "recurso" is nullable here.(ÖÏîïıÿÿÿÿHRMAJORZBUG
-Wsquid:S11486"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHRMINORZVULNERABILITY
-Xsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿHRMINORZVULNERABILITY
-tsquid:S3752Z">Add a "method" parameter to this "@RequestMapping" annotation.(êÂÈØşÿÿÿÿHRBLOCKERZVULNERABILITY
-osquid:S3752c">Add a "method" parameter to this "@RequestMapping" annotation.(ø†§ÔHRBLOCKERZVULNERABILITY
-usquid:S3752">Add a "method" parameter to this "@RequestMapping" annotation.(ë¥ßÑüÿÿÿÿHRBLOCKERZVULNERABILITY
-bsquid:S11355"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿHRINFOZ
-CODE_SMELL
-tsquid:S4488L"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(›”°şHRMINORZ
-CODE_SMELL
-Šsquid:S2293S"YReplace the type specification in this constructor call with the diamond operator ("<>").(÷ÚªøÿÿÿÿHRMINORZ
-CODE_SMELL
-wsquid:S4684x"@Replace this persistent entity with a simple POJO or DTO object.(ÙêèƒúÿÿÿÿHRCRITICALZVULNERABILITY
-{squid:S4488w"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(”—ĞÖüÿÿÿÿHRMINORZ
-CODE_SMELL
-csquid:S1135Œ"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿHRINFOZ
-CODE_SMELL
