@@ -1,13 +1,0 @@
-
-‹squid:S2293@"YReplace the type specification in this constructor call with the diamond operator ("<>").(έσήψÿÿÿÿHηRMINORZ
-CODE_SMELL
-†squid:S2293,"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ζ–ΡHθRMINORZ
-CODE_SMELL
-‹squid:S22937"YReplace the type specification in this constructor call with the diamond operator ("<>").(έσήψÿÿÿÿHιRMINORZ
-CODE_SMELL
-‹squid:S2293#"YReplace the type specification in this constructor call with the diamond operator ("<>").(έσήψÿÿÿÿHκRMINORZ
-CODE_SMELL
-squid:S14880"hImmediately return this expression instead of assigning it to the temporary variable "productoResponse".(Γ­τϋÿÿÿÿHλRMINORZ
-CODE_SMELL
-†squid:S22936"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ζ–ΡHμRMINORZ
-CODE_SMELL

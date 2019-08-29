@@ -1,9 +1,0 @@
-package co.com.vitarrico.app.inventario.repositorio.producto;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import co.com.vitarrico.app.commons.entidad.EntidadProducto;
-
-public interface IRepositorioProducto extends JpaRepository<EntidadProducto, Long> {
-
-}

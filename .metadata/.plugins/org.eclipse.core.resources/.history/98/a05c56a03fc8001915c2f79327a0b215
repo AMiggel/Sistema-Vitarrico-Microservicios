@@ -1,8 +1,0 @@
-package co.com.vitarrico.app.facturacion.modelo;
-
-import javax.persistence.Entity;
-
-@Entity
-public class EntidadFactura {
-
-}

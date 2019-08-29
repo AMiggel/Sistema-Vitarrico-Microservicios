@@ -1,5 +1,0 @@
-package co.com.vitarrico.app.facturacion.dominio.servicio;
-
-public interface IServicioFacturqa {
-
-}
