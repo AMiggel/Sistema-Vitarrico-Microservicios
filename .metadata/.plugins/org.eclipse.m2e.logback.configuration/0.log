@@ -7188,3 +7188,5 @@ org.eclipse.jface.text.BadLocationException: null
 2019-08-29 08:29:58,965 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-08-29 08:29:58,967 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2019-08-29 08:29:58,971 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-08-29 08:29:58,975 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-08-29 08:29:58,977 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\antonio.marin\Documents\Projects\Proyecto de Grado\microservicio-inventario\src\test\resources
