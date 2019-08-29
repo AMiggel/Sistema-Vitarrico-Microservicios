@@ -7,6 +7,8 @@ public class Producto {
 	private String nombre;
 
 	private Double precio;
+	
+	private Integer cantidadDisponible;
 
 	public Long getId() {
 		return id;
@@ -24,4 +26,13 @@ public class Producto {
 		return precio;
 	}
 
+	public Integer getCantidadDisponible() {
+		return cantidadDisponible;
+	}
+
+	public void setCantidadDisponible(Integer cantidadDisponible) {
+		this.cantidadDisponible = cantidadDisponible;
+	}
+
+	
 }

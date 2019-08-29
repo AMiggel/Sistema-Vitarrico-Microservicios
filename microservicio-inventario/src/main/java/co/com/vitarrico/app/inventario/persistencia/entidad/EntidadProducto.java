@@ -1,4 +1,4 @@
-package co.com.vitarrico.app.inventario.modelo;
+package co.com.vitarrico.app.inventario.persistencia.entidad;
 
 import java.util.Date;
 
@@ -40,22 +40,6 @@ public class EntidadProducto {
 
 	@Column(name = "cantidad_creada")
 	private int cantidadCreada;
-
-
-	public EntidadProducto() {
-		
-	}
-	public EntidadProducto(Long id, String nombre,Double precio, Date fechaCreacion,
-			Date fechaVencimiento, String tipoProducto, int cantidadDisponible, int cantidadCreada) {
-		this.id = id;
-		this.nombre = nombre;
-		this.precio = precio;
-		this.fechaCreacion = fechaCreacion;
-		this.fechaVencimiento = fechaVencimiento;
-		this.tipoProducto = tipoProducto;
-		this.cantidadDisponible = cantidadDisponible;
-		this.cantidadCreada = cantidadCreada;
-	}
 
 	public Long getId() {
 		return id;

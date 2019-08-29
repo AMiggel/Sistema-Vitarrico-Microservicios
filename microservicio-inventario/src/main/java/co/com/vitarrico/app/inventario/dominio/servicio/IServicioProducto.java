@@ -2,7 +2,7 @@ package co.com.vitarrico.app.inventario.dominio.servicio;
 
 import java.util.List;
 
-import co.com.vitarrico.app.inventario.modelo.EntidadProducto;
+import co.com.vitarrico.app.inventario.persistencia.entidad.EntidadProducto;
 
 public interface IServicioProducto {
 

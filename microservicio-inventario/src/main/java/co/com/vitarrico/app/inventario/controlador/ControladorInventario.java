@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.com.vitarrico.app.inventario.modelo.EntidadProducto;
 import co.com.vitarrico.app.inventario.dominio.servicio.IServicioProducto;
+import co.com.vitarrico.app.inventario.persistencia.entidad.EntidadProducto;
 
 @RestController
 public class ControladorInventario {

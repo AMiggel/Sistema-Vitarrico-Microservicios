@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import co.com.vitarrico.app.inventario.modelo.EntidadProducto;
+import co.com.vitarrico.app.inventario.persistencia.entidad.EntidadProducto;
+import co.com.vitarrico.app.inventario.persistencia.repositorio.producto.IRepositorioProducto;
 import co.com.vitarrico.app.inventario.dominio.servicio.IServicioProducto;
-import co.com.vitarrico.app.inventario.repositorio.producto.IRepositorioProducto;
 
 @Service
 public class ServicioProducto implements IServicioProducto {

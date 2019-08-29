@@ -13,9 +13,15 @@ Rsrc/main/java/co/com/vitarrico/app/facturacion/controlador/ControladorFactura.j
 ]src/main/java/co/com/vitarrico/app/facturacion/dominio/servicio/impl/ServicioFacturaImpl.java,e\b\ebe432066c08474b341d9d5e2dddee3b18aaabcf
 è
 _src/main/java/co/com/vitarrico/app/facturacion/dominio/servicio/feign/ProductoClienteFeign.java,f\9\f9c64022fb08512c77e327bfd7c4290b02fb5a57
-y
-Isrc/main/java/co/com/vitarrico/app/facturacion/modelo/feign/Producto.java,4\0\401cc1cfb3497d1197c9402911ad95a9d15a72b8
 ó
 gsrc/main/java/co/com/vitarrico/app/facturacion/persistencia/repositorio/factura/RepositorioFactura.java,d\3\d33cdd6b647a88f1cfa527c2a010839a139b6f6e
 ô
 isrc/main/java/co/com/vitarrico/app/facturacion/persistencia/repositorio/item/IRepositorioItemFactura.java,e\e\ee1356310f3aea527c526c65b7bf04e95f9d4573
+á
+Wsrc/main/java/co/com/vitarrico/app/facturacion/persistencia/entidad/EntidadFactura.java,b\2\b23efc4cdf0244c76472db71b79e1b87c8da0957
+Ö
+Usrc/main/java/co/com/vitarrico/app/facturacion/persistencia/mapper/FacturaMapper.java,e\9\e9077e6e14b707f5a6367f3ca9270ef9329d0106
+Ç
+Rsrc/main/java/co/com/vitarrico/app/facturacion/dominio/dto/factura/FacturaDto.java,5\0\5016bde5f91f668983d44c5483ff34ca4a64a981
+É
+Ssrc/main/java/co/com/vitarrico/app/facturacion/dominio/dto/item/ItemFacturaDto.java,a\0\a0c0a1df9c999b47eef461f7acf08dbe84135b7d

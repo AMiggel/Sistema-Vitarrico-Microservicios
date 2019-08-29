@@ -51,6 +51,7 @@ public class ServicioFacturaImpl implements IServicioFactura {
 			items.add(item);
 			factura.setItems(items);
 			repositorioItemFactura.save(item);
+			modificarCantidadProductosDisponibles(producto, item);
 		}
 
 		Calendar fecha = Calendar.getInstance();
@@ -73,7 +74,9 @@ public class ServicioFacturaImpl implements IServicioFactura {
 		return null;
 	}
 	
-	public void modificarCantidadProductosDisponibles (Producto producto) {
+	public void modificarCantidadProductosDisponibles (Producto producto, EntidadItemFactura item ) {
+		Integer restarCantidad= producto.getCantidadDisponible() - item.getCantidad();
+		producto.setCantidadDisponible(restarCantidad);
 		productoClienteFeign.modificarProducto(producto.getId(), producto);
 		
 	}

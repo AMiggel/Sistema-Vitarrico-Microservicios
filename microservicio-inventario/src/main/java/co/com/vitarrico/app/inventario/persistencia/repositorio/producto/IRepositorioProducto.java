@@ -1,9 +1,9 @@
-package co.com.vitarrico.app.inventario.repositorio.producto;
+package co.com.vitarrico.app.inventario.persistencia.repositorio.producto;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import co.com.vitarrico.app.inventario.modelo.EntidadProducto;
+import co.com.vitarrico.app.inventario.persistencia.entidad.EntidadProducto;
 
 
 @Repository

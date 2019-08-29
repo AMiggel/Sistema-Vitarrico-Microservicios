@@ -2,7 +2,6 @@
 <aop-reference-model>
 <aop-project name="microservicio-facturacion"/>
 <aop-project name="microservicio-productos"/>
-<aop-project name="springMVC-Facturacion-VItarrico-master"/>
 <aop-project name="microservicio-inventario"/>
 <aop-project name="microservicio-items">
 <aspect-definition advice-class-name="com.netflix.hystrix.contrib.javanica.aop.aspectj.HystrixCommandAspect" advice-method-name="methodsAnnotatedWithHystrixCommand(org.aspectj.lang.ProceedingJoinPoint)" advice-type="AROUND" aspect-end-line-number="-1" aspect-name="hystrixCommandAspect" aspect-start-line-number="-1" factory-id="org.springframework.ide.eclipse.aop.core.annotationAspectDefinitionElementFactory" file="/microservicio-items/src/main/java/co/com/unac/app/items/MicroservicioItemsApplication.java" pointcut-expression="hystrixCommandAnnotationPointcut() || hystrixCollapserAnnotationPointcut()" proxy-target-class="true">

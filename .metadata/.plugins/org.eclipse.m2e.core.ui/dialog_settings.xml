@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\antonio.marin\Documents\Projects\Proyecto de Grado\microservicio-eureka-server"/>
+			<item value="C:\Users\antonio.marin\Documents\Projects\Proyecto de Grado\microservicio-api-gateway-zuul"/>
 			<item value="C:\Users\antonio.marin\Documents\Projects\Curso-Udemy-Microservicios-SpringBoot\microservicio-productos"/>
 			<item value="C:\Users\antonio.marin\Documents\Projects\Proyecto de Grado\sistema-facturacion"/>
 			<item value="C:\Users\antonio.marin\Documents\Projects\Curso-Udemy-Microservicios-SpringBoot\microservicio-configuracion-servicios"/>
