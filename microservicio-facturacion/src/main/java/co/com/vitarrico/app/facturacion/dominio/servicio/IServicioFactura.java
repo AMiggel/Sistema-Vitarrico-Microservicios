@@ -6,6 +6,7 @@ import co.com.vitarrico.app.facturacion.dominio.dto.factura.FacturaDto;
 import co.com.vitarrico.app.facturacion.persistencia.entidad.EntidadFactura;
 
 public interface IServicioFactura {
+	
 	public List<EntidadFactura> listar();
 
 	public EntidadFactura crearFactura(FacturaDto factura);
