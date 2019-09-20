@@ -1,6 +1,6 @@
 package co.com.vitarrico.app.facturacion.dominio.dto.feign;
 
-public class Producto {
+public class ProductoDto {
 
 	private Long id;
 

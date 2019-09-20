@@ -3,7 +3,7 @@ package co.com.vitarrico.app.facturacion.dominio.dto.factura;
 import java.util.Date;
 import java.util.List;
 
-import co.com.vitarrico.app.facturacion.persistencia.entidad.EntidadItemFactura;
+import co.com.vitarrico.app.facturacion.dominio.dto.item.ItemDto;
 
 
 public class FacturaDto {
@@ -14,11 +14,7 @@ public class FacturaDto {
 
 	private Date fechaCreacion;
 
-	private Long[] idProducto;
-
-	private Integer[] cantidadProducto;
-
-	private List<EntidadItemFactura> items;
+	private List<ItemDto> items;
 
 	public String getDescripcion() {
 		return descripcion;
@@ -44,29 +40,14 @@ public class FacturaDto {
 		this.fechaCreacion = fechaCreacion;
 	}
 
-	public Long[] getIdProducto() {
-		return idProducto;
-	}
-
-	public void setIdProducto(Long[] idProducto) {
-		this.idProducto = idProducto;
-	}
-
-	public Integer[] getCantidadProducto() {
-		return cantidadProducto;
-	}
-
-	public void setCantidadProducto(Integer[] cantidadProducto) {
-		this.cantidadProducto = cantidadProducto;
-	}
-
-	public List<EntidadItemFactura> getItems() {
+	public List<ItemDto> getItems() {
 		return items;
 	}
 
-	public void setItems(List<EntidadItemFactura> items) {
+	public void setItems(List<ItemDto> items) {
 		this.items = items;
 	}
+
 
 	
 }
