@@ -1,7 +1,5 @@
 package co.com.vitarrico.app.facturacion.dominio.servicio.impl;
 
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,19 +42,14 @@ public class ServicioFacturaImpl implements IServicioFactura {
 
 	@Override
 	public EntidadFactura crearFactura(FacturaDto factura) {
-		
-		List<ItemDto> items= new ArrayList<ItemDto>();
-		
-		for(ItemDto itemDto: factura.getItems()) {
+
+		for (ItemDto itemDto : factura.getItems()) {
 			ProductoDto producto = productoClienteFeign.buscarProductoPorId(itemDto.getIdProducto());
 			repositorioItemFactura.save(itemFacturaMapper.mappearDtoAEntidad(itemDto));
 			itemDto.setNombreProducto(producto.getNombre());
 			itemDto.setPrecioProducto(producto.getPrecio());
 			modificarCantidadProductosDisponibles(producto, itemDto);
-			items.add(itemDto);
 		}
-	
-		factura.setItems(items);
 
 		return repositorioFactura.save(facturaMapper.mappearDtoAEntidad(factura));
 	}

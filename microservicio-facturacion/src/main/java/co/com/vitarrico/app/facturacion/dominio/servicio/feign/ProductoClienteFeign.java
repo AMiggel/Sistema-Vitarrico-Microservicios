@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import co.com.vitarrico.app.facturacion.dominio.dto.feign.ProductoDto;
 
 
-@FeignClient(name = "servicio-inventario")
+@FeignClient(name = "servicio-inventario", url="localhost:9005")
 public interface ProductoClienteFeign {
 
 	@GetMapping(value = "/producto/{id}")
