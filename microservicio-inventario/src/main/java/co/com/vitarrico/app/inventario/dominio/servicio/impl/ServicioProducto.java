@@ -64,10 +64,6 @@ public class ServicioProducto implements IServicioProducto {
 	public EntidadProducto modificarProducto(Long id, EntidadProducto producto) {
 		EntidadProducto productoActual = buscarProductoPorId(id);
 		productoActual.setCantidadDisponible(producto.getCantidadDisponible());
-		productoActual.setFechaVencimiento(producto.getFechaVencimiento());
-		productoActual.setNombre(producto.getNombre());
-		productoActual.setPrecio(producto.getPrecio());
-		productoActual.setTipoProducto(producto.getTipoProducto());
 		
 		return repositorioProducto.save(productoActual);
 	}
