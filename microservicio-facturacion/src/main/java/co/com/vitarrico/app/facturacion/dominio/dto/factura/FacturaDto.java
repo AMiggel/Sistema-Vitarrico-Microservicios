@@ -44,9 +44,11 @@ public class FacturaDto {
 		return items;
 	}
 
-	public void setItems(List<ItemDto> items) {
-		this.items = items;
+	public void addItems(ItemDto item) {
+		this.items.add(item);
 	}
+	
+	
 
 
 	

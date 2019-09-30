@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import co.com.vitarrico.app.facturacion.dominio.dto.factura.FacturaDto;
 import co.com.vitarrico.app.facturacion.dominio.dto.feign.ProductoDto;
 import co.com.vitarrico.app.facturacion.dominio.dto.item.ItemDto;
+import co.com.vitarrico.app.facturacion.dominio.excepcion.ExcepcionFacturas;
 import co.com.vitarrico.app.facturacion.dominio.servicio.IServicioFactura;
 import co.com.vitarrico.app.facturacion.dominio.servicio.feign.ProductoClienteFeign;
 import co.com.vitarrico.app.facturacion.persistencia.entidad.EntidadFactura;
@@ -18,6 +19,8 @@ import co.com.vitarrico.app.facturacion.persistencia.repositorio.item.IRepositor
 
 @Service
 public class ServicioFacturaImpl implements IServicioFactura {
+	
+	public static final String NO_HAY_PRODUCTOS_DISPONIBLES = "No hay productos disponibles del producto %s en el sistema";
 
 	@Autowired
 	private RepositorioFactura repositorioFactura;
@@ -42,13 +45,16 @@ public class ServicioFacturaImpl implements IServicioFactura {
 
 	@Override
 	public EntidadFactura crearFactura(FacturaDto factura) {
-
-		for (ItemDto itemDto : factura.getItems()) {
+	
+		
+		for (int i = 0; i < factura.getItems().size(); i++) {
+			ItemDto itemDto = factura.getItems().get(i);
 			ProductoDto producto = productoClienteFeign.buscarProductoPorId(itemDto.getIdProducto());
-			repositorioItemFactura.save(itemFacturaMapper.mappearDtoAEntidad(itemDto));
+			validarCantidadDisponible(producto);
 			itemDto.setNombreProducto(producto.getNombre());
 			itemDto.setPrecioProducto(producto.getPrecio());
 			modificarCantidadProductosDisponibles(producto, itemDto);
+			repositorioItemFactura.save(itemFacturaMapper.mappearDtoAEntidad(itemDto));
 		}
 
 		return repositorioFactura.save(facturaMapper.mappearDtoAEntidad(factura));
@@ -74,6 +80,12 @@ public class ServicioFacturaImpl implements IServicioFactura {
 		producto.setCantidadDisponible(restarCantidad);
 		productoClienteFeign.modificarProducto(producto.getId(), producto);
 
+	}
+	
+	public void validarCantidadDisponible(ProductoDto producto) {
+		if (producto.getCantidadDisponible() <= 0 ) {
+			throw new ExcepcionFacturas( String.format(NO_HAY_PRODUCTOS_DISPONIBLES, producto.getNombre()));
+		}
 	}
 
 }

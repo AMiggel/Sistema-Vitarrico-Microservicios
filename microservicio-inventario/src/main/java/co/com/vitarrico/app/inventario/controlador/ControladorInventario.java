@@ -3,6 +3,7 @@ package co.com.vitarrico.app.inventario.controlador;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,4 +39,11 @@ public class ControladorInventario {
 	public EntidadProducto modificarProducto(@PathVariable (value = "id") Long id, @RequestBody EntidadProducto producto) {
 		return servicioProducto.modificarProducto(id, producto);
 	}
+	
+	@DeleteMapping(value= "borrar-producto/{id}")
+	public void borrarProducto(@PathVariable (value="id")Long id) {
+		servicioProducto.borrarProducto(id);
+		
+	}
+	
 }

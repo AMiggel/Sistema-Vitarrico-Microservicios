@@ -35,6 +35,8 @@ public class EntidadFactura {
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "factura_id")
 	private List<EntidadItemFactura> items;
+	
+
 
 	public Long getId() {
 		return id;
