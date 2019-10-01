@@ -36,6 +36,7 @@ public class ServicioProducto implements IServicioProducto {
 			throw new ExcepcionInventario(CANTIDAD_CREADA_INVALIDA);
 		}
 		if (productoExistente != null) {
+			productoExistente.setCantidadCreada(producto.getCantidadCreada());
 			disponible = productoExistente.getCantidadDisponible() + producto.getCantidadCreada();
 			productoExistente.setCantidadDisponible(disponible);
 			return repositorioProducto.save(productoExistente);
@@ -65,15 +66,24 @@ public class ServicioProducto implements IServicioProducto {
 	@Override
 	public EntidadProducto modificarProducto(Long id, EntidadProducto producto) {
 		EntidadProducto productoActual = buscarProductoPorId(id);
-		productoActual.setCantidadDisponible(producto.getCantidadDisponible());
-		
+		Integer diferencia = 0;
+		Integer disponible = 0;
+
+		if (producto.getCantidadDisponible() == 0) {
+			diferencia = producto.getCantidadCreada() - productoActual.getCantidadCreada();
+			disponible = productoActual.getCantidadDisponible() + diferencia;
+			productoActual.setCantidadCreada(producto.getCantidadCreada());
+			productoActual.setCantidadDisponible(disponible);
+	
+		} else {
+			productoActual.setCantidadDisponible(producto.getCantidadDisponible());
+		}
+
 		return repositorioProducto.save(productoActual);
 	}
-	
-	
+
 	public void asignarFechaCreacion(EntidadProducto producto) {
 		producto.setFechaCreacion(Calendar.getInstance().getTime());
 	}
-	
 
 }
