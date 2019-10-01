@@ -15,6 +15,8 @@ public class FacturaDto {
 	private Date fechaCreacion;
 
 	private List<ItemDto> items;
+	
+	private Double totalFactura;
 
 	public String getDescripcion() {
 		return descripcion;
@@ -47,9 +49,15 @@ public class FacturaDto {
 	public void addItems(ItemDto item) {
 		this.items.add(item);
 	}
+
+	public Double getTotalFactura() {
+		return totalFactura;
+	}
+
+	public void setTotalFactura(Double totalFactura) {
+		this.totalFactura = totalFactura;
+	}
 	
 	
-
-
 	
 }

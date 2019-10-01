@@ -1,5 +1,6 @@
 package co.com.vitarrico.app.facturacion.dominio.servicio.impl;
 
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ import co.com.vitarrico.app.facturacion.persistencia.repositorio.item.IRepositor
 
 @Service
 public class ServicioFacturaImpl implements IServicioFactura {
-	
+
 	public static final String NO_HAY_PRODUCTOS_DISPONIBLES = "No hay productos disponibles del producto %s en el sistema";
 
 	@Autowired
@@ -45,8 +46,7 @@ public class ServicioFacturaImpl implements IServicioFactura {
 
 	@Override
 	public EntidadFactura crearFactura(FacturaDto factura) {
-	
-		
+
 		for (int i = 0; i < factura.getItems().size(); i++) {
 			ItemDto itemDto = factura.getItems().get(i);
 			ProductoDto producto = productoClienteFeign.buscarProductoPorId(itemDto.getIdProducto());
@@ -57,7 +57,8 @@ public class ServicioFacturaImpl implements IServicioFactura {
 			calcularTotalProducto(producto.getPrecio(), itemDto);
 			repositorioItemFactura.save(itemFacturaMapper.mappearDtoAEntidad(itemDto));
 		}
-
+		calcularTotalFactura(factura.getItems(), factura);
+		asignarFechaCreacion(factura);
 		return repositorioFactura.save(facturaMapper.mappearDtoAEntidad(factura));
 	}
 
@@ -82,16 +83,31 @@ public class ServicioFacturaImpl implements IServicioFactura {
 		productoClienteFeign.modificarProducto(producto.getId(), producto);
 
 	}
-	
+
 	public void validarCantidadDisponible(ProductoDto producto) {
-		if (producto.getCantidadDisponible() <= 0 ) {
-			throw new ExcepcionFacturas( String.format(NO_HAY_PRODUCTOS_DISPONIBLES, producto.getNombre()));
+		if (producto.getCantidadDisponible() <= 0) {
+			throw new ExcepcionFacturas(String.format(NO_HAY_PRODUCTOS_DISPONIBLES, producto.getNombre()));
 		}
 	}
-	
+
 	public void calcularTotalProducto(Double precio, ItemDto item) {
-		Double total= precio * item.getCantidadProducto();
+		Double total = precio * item.getCantidadProducto();
 		item.setPrecioTotal(total);
 	}
+
+	public void calcularTotalFactura(List<ItemDto> item, FacturaDto factura) {
+		
+		Double total = 0.0;
+		
+		for (int i = 0; i < item.size(); i++) {
+			total+=item.get(i).getPrecioTotal();
+		}
+		factura.setTotalFactura(total);
+	}
+	
+	public void asignarFechaCreacion(FacturaDto factura) {
+		factura.setFechaCreacion(Calendar.getInstance().getTime());
+	}
+	
 
 }

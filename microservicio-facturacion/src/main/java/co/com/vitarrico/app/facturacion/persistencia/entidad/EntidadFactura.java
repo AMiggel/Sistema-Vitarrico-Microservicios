@@ -36,6 +36,7 @@ public class EntidadFactura {
 	@JoinColumn(name = "factura_id")
 	private List<EntidadItemFactura> items;
 	
+	private Double totalFactura;
 
 
 	public Long getId() {
@@ -76,6 +77,14 @@ public class EntidadFactura {
 
 	public void setItems(List<EntidadItemFactura> items) {
 		this.items = items;
+	}
+
+	public Double getTotalFactura() {
+		return totalFactura;
+	}
+
+	public void setTotalFactura(Double totalFactura) {
+		this.totalFactura = totalFactura;
 	}
 
 }

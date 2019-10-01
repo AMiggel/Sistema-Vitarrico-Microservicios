@@ -1,5 +1,6 @@
 package co.com.vitarrico.app.inventario.dominio.servicio.impl;
 
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,7 @@ public class ServicioProducto implements IServicioProducto {
 			productoExistente.setCantidadDisponible(disponible);
 			return repositorioProducto.save(productoExistente);
 		} else {
+			asignarFechaCreacion(producto);
 			return repositorioProducto.save(producto);
 		}
 	}
@@ -67,5 +69,11 @@ public class ServicioProducto implements IServicioProducto {
 		
 		return repositorioProducto.save(productoActual);
 	}
+	
+	
+	public void asignarFechaCreacion(EntidadProducto producto) {
+		producto.setFechaCreacion(Calendar.getInstance().getTime());
+	}
+	
 
 }

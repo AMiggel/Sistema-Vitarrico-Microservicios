@@ -18,6 +18,7 @@ public class FacturaMapper {
 		 entidad.setObservacion(facturaDto.getObservacion());
 		 entidad.setFechaCreacion(facturaDto.getFechaCreacion());
 		 entidad.setItems(itemFacturaMapper.mappearListaItemsAEntidad(facturaDto.getItems()));
+		 entidad.setTotalFactura(facturaDto.getTotalFactura());
 		return entidad;
 	}
 }
