@@ -9,15 +9,18 @@ public class ItemDto {
 	private String nombreProducto;
 
 	private Double precioProducto;
+	
+	private Double precioTotal;
 
 	public ItemDto() {
 		
 	}
 	
-	public ItemDto(Integer cantidadProducto, String nombreProducto, Double precioProducto) {
+	public ItemDto(Integer cantidadProducto, String nombreProducto, Double precioProducto, Double precioTotal) {
 		this.cantidadProducto = cantidadProducto;
 		this.nombreProducto = nombreProducto;
 		this.precioProducto = precioProducto;
+		this.precioTotal=precioTotal;
 	}
 
 	public Long getIdProducto() {
@@ -51,8 +54,13 @@ public class ItemDto {
 	public void setPrecioProducto(Double precioProducto) {
 		this.precioProducto = precioProducto;
 	}
-	
-	
-	
+
+	public Double getPrecioTotal() {
+		return precioTotal;
+	}
+
+	public void setPrecioTotal(Double precioTotal) {
+		this.precioTotal = precioTotal;
+	}
 	
 }

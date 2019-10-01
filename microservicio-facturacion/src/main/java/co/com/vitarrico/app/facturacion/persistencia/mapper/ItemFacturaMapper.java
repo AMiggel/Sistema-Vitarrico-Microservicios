@@ -16,6 +16,7 @@ public class ItemFacturaMapper {
 		entidad.setCantidad(item.getCantidadProducto());
 		entidad.setNombreProducto(item.getNombreProducto());
 		entidad.setPrecioProducto(item.getPrecioProducto());
+		entidad.setPrecioTotal(item.getPrecioTotal());
 		
 		return entidad;
 	}
@@ -25,7 +26,7 @@ public class ItemFacturaMapper {
 				
 		for (ItemDto itemDto: listaItemFactura ) {
 		
-			lista.add(new EntidadItemFactura(itemDto.getCantidadProducto(),itemDto.getNombreProducto(),itemDto.getPrecioProducto()));
+			lista.add(new EntidadItemFactura(itemDto.getCantidadProducto(),itemDto.getNombreProducto(),itemDto.getPrecioProducto(),itemDto.getPrecioTotal()));
 		}
 		return lista;
 	}

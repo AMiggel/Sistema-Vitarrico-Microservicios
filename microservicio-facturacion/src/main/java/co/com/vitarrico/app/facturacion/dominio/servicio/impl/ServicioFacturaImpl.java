@@ -54,6 +54,7 @@ public class ServicioFacturaImpl implements IServicioFactura {
 			itemDto.setNombreProducto(producto.getNombre());
 			itemDto.setPrecioProducto(producto.getPrecio());
 			modificarCantidadProductosDisponibles(producto, itemDto);
+			calcularTotalProducto(producto.getPrecio(), itemDto);
 			repositorioItemFactura.save(itemFacturaMapper.mappearDtoAEntidad(itemDto));
 		}
 
@@ -86,6 +87,11 @@ public class ServicioFacturaImpl implements IServicioFactura {
 		if (producto.getCantidadDisponible() <= 0 ) {
 			throw new ExcepcionFacturas( String.format(NO_HAY_PRODUCTOS_DISPONIBLES, producto.getNombre()));
 		}
+	}
+	
+	public void calcularTotalProducto(Double precio, ItemDto item) {
+		Double total= precio * item.getCantidadProducto();
+		item.setPrecioTotal(total);
 	}
 
 }

@@ -18,15 +18,17 @@ public class EntidadItemFactura {
 
 	private Double precioProducto;
 	
+	private Double precioTotal;
 	
 
 	public EntidadItemFactura() {
 	}
 
-	public EntidadItemFactura(Integer cantidad, String nombreProducto, Double precioProducto) {
+	public EntidadItemFactura(Integer cantidad, String nombreProducto, Double precioProducto, Double precioTotal) {
 		this.cantidad = cantidad;
 		this.nombreProducto = nombreProducto;
 		this.precioProducto = precioProducto;
+		this.precioTotal=precioTotal;
 	}
 
 	public Long getId() {
@@ -61,4 +63,12 @@ public class EntidadItemFactura {
 		this.precioProducto = precioProducto;
 	}
 
+	public Double getPrecioTotal() {
+		return precioTotal;
+	}
+
+	public void setPrecioTotal(Double precioTotal) {
+		this.precioTotal = precioTotal;
+	}
+	
 }
