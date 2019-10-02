@@ -10,7 +10,7 @@ import co.com.vitarrico.app.facturacion.dominio.dto.feign.ProductoDto;
 
 
 @FeignClient(name = "servicio-inventario", url="localhost:9005")
-public interface ProductoClienteFeign {
+public interface ServicioProductoFeign {
 
 	@GetMapping(value = "/producto/{id}")
 	public ProductoDto buscarProductoPorId(@PathVariable(value = "id") Long id); 

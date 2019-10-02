@@ -11,7 +11,7 @@ import co.com.vitarrico.app.facturacion.dominio.dto.feign.ProductoDto;
 import co.com.vitarrico.app.facturacion.dominio.dto.item.ItemDto;
 import co.com.vitarrico.app.facturacion.dominio.excepcion.ExcepcionFacturas;
 import co.com.vitarrico.app.facturacion.dominio.servicio.IServicioFactura;
-import co.com.vitarrico.app.facturacion.dominio.servicio.feign.ProductoClienteFeign;
+import co.com.vitarrico.app.facturacion.dominio.servicio.feign.ServicioProductoFeign;
 import co.com.vitarrico.app.facturacion.persistencia.entidad.EntidadFactura;
 import co.com.vitarrico.app.facturacion.persistencia.mapper.FacturaMapper;
 import co.com.vitarrico.app.facturacion.persistencia.mapper.ItemFacturaMapper;
@@ -33,7 +33,7 @@ public class ServicioFacturaImpl implements IServicioFactura {
 	private ItemFacturaMapper itemFacturaMapper;
 
 	@Autowired
-	private ProductoClienteFeign productoClienteFeign;
+	private ServicioProductoFeign productoClienteFeign;
 
 	@Autowired
 	private IRepositorioItemFactura repositorioItemFactura;
@@ -74,6 +74,7 @@ public class ServicioFacturaImpl implements IServicioFactura {
 
 	@Override
 	public EntidadFactura modificarFactura(Long id, EntidadFactura factura) {
+		
 		return null;
 	}
 
