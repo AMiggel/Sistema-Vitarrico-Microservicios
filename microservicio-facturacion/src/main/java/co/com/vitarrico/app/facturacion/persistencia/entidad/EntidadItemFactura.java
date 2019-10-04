@@ -24,8 +24,9 @@ public class EntidadItemFactura {
 	public EntidadItemFactura() {
 	}
 
-	public EntidadItemFactura(Integer cantidad, String nombreProducto, Double precioProducto, Double precioTotal) {
+	public EntidadItemFactura(Long id, Integer cantidad, String nombreProducto, Double precioProducto, Double precioTotal) {
 		this.cantidad = cantidad;
+		this.id=id;
 		this.nombreProducto = nombreProducto;
 		this.precioProducto = precioProducto;
 		this.precioTotal=precioTotal;

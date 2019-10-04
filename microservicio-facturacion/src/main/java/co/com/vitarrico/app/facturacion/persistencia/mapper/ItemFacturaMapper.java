@@ -13,22 +13,46 @@ public class ItemFacturaMapper {
 
 	public EntidadItemFactura mappearDtoAEntidad(ItemDto item) {
 		EntidadItemFactura entidad = new EntidadItemFactura();
+		entidad.setId(item.getId());
 		entidad.setCantidad(item.getCantidadProducto());
 		entidad.setNombreProducto(item.getNombreProducto());
 		entidad.setPrecioProducto(item.getPrecioProducto());
 		entidad.setPrecioTotal(item.getPrecioTotal());
-		
+
 		return entidad;
 	}
 
-	public List<EntidadItemFactura> mappearListaItemsAEntidad (List<ItemDto> listaItemFactura){
-		List<EntidadItemFactura> lista= new ArrayList<>();
-				
-		for (ItemDto itemDto: listaItemFactura ) {
-		
-			lista.add(new EntidadItemFactura(itemDto.getCantidadProducto(),itemDto.getNombreProducto(),itemDto.getPrecioProducto(),itemDto.getPrecioTotal()));
+	public ItemDto mappearEntidadADto(EntidadItemFactura item) {
+		ItemDto itemDto = new ItemDto();
+		itemDto.setId(item.getId());
+		itemDto.setCantidadProducto(item.getCantidad());
+		itemDto.setNombreProducto(item.getNombreProducto());
+		itemDto.setPrecioProducto(item.getPrecioProducto());
+		itemDto.setPrecioTotal(item.getPrecioTotal());
+
+		return itemDto;
+	}
+
+	public List<EntidadItemFactura> mappearListaItemsAEntidad(List<ItemDto> listaItemFactura) {
+		List<EntidadItemFactura> lista = new ArrayList<>();
+
+		for (ItemDto itemDto : listaItemFactura) {
+
+			lista.add(new EntidadItemFactura(itemDto.getId(),itemDto.getCantidadProducto(), itemDto.getNombreProducto(),
+					itemDto.getPrecioProducto(), itemDto.getPrecioTotal()));
 		}
 		return lista;
 	}
+
+	public List<ItemDto> mappearListaEntidadItemsADto(List<EntidadItemFactura> listaEntidadItemFactura) {
+		List<ItemDto> lista = new ArrayList<>();
+
+		for (EntidadItemFactura entidadItem : listaEntidadItemFactura) {
+
+			lista.add(new ItemDto(entidadItem.getId(),entidadItem.getCantidad(), entidadItem.getNombreProducto(),
+					entidadItem.getPrecioProducto(), entidadItem.getPrecioTotal()));
+		}
+		return lista;
+	}
+
 }
-	

@@ -2,6 +2,8 @@ package co.com.vitarrico.app.facturacion.dominio.dto.item;
 
 public class ItemDto {
 
+	private Long id;
+	
 	private Long idProducto;
 
 	private Integer cantidadProducto;
@@ -16,7 +18,8 @@ public class ItemDto {
 		
 	}
 	
-	public ItemDto(Integer cantidadProducto, String nombreProducto, Double precioProducto, Double precioTotal) {
+	public ItemDto(Long id, Integer cantidadProducto, String nombreProducto, Double precioProducto, Double precioTotal) {
+		this.id=id;
 		this.cantidadProducto = cantidadProducto;
 		this.nombreProducto = nombreProducto;
 		this.precioProducto = precioProducto;
@@ -62,5 +65,14 @@ public class ItemDto {
 	public void setPrecioTotal(Double precioTotal) {
 		this.precioTotal = precioTotal;
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
 	
 }

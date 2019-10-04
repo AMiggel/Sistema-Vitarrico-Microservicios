@@ -28,21 +28,21 @@ public class ServicioProducto implements IServicioProducto {
 	@Override
 	public EntidadProducto crearProducto(EntidadProducto producto) {
 
+		int disponible=0;
+		EntidadProducto productoExistente= repositorioProducto.findByNombre(producto.getNombre());
 		producto.setCantidadDisponible(producto.getCantidadCreada());
-		EntidadProducto productoExistente = repositorioProducto.findByNombre(producto.getNombre());
-		int disponible = 0;
-
 		if (producto.getCantidadCreada() <= 0) {
 			throw new ExcepcionInventario(CANTIDAD_CREADA_INVALIDA);
 		}
+		
 		if (productoExistente != null) {
 			productoExistente.setCantidadCreada(producto.getCantidadCreada());
 			disponible = productoExistente.getCantidadDisponible() + producto.getCantidadCreada();
 			productoExistente.setCantidadDisponible(disponible);
 			return repositorioProducto.save(productoExistente);
 		} else {
-			asignarFechaCreacion(producto);
-			return repositorioProducto.save(producto);
+		asignarFechaCreacion(producto);
+		return repositorioProducto.save(producto);
 		}
 	}
 
@@ -74,7 +74,7 @@ public class ServicioProducto implements IServicioProducto {
 			disponible = productoActual.getCantidadDisponible() + diferencia;
 			productoActual.setCantidadCreada(producto.getCantidadCreada());
 			productoActual.setCantidadDisponible(disponible);
-	
+
 		} else {
 			productoActual.setCantidadDisponible(producto.getCantidadDisponible());
 		}

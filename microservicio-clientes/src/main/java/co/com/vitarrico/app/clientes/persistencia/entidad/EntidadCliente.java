@@ -1,5 +1,6 @@
 package co.com.vitarrico.app.clientes.persistencia.entidad;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -36,6 +37,7 @@ public class EntidadCliente {
 
 	@OneToMany( fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<EntidadFactura> facturas;
+	
 
 	public Long getId() {
 		return id;
@@ -82,8 +84,8 @@ public class EntidadCliente {
 		return facturas;
 	}
 
-	public void setFacturas(List<EntidadFactura> facturas) {
-		this.facturas = facturas;
+	public void addFactura(EntidadFactura factura) {
+		facturas.add(factura);
 	}
 
 

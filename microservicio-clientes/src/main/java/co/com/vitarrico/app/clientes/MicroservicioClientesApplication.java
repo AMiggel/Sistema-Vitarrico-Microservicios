@@ -1,9 +1,11 @@
 package co.com.vitarrico.app.clientes;
 
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-
+@EntityScan({"co.com.vitarrico.app.*"})
 @EnableEurekaClient
 @SpringBootApplication
 public class MicroservicioClientesApplication {

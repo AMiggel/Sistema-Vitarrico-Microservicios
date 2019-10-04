@@ -19,6 +19,10 @@ public class ClienteDto {
 	private Date fechaCreacion;
 
 	private List<FacturaDto> facturas;
+	
+	public void addFactura(FacturaDto factura) {
+		facturas.add(factura);
+	}
 
 	public Long getId() {
 		return id;

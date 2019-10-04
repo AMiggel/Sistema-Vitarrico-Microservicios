@@ -24,9 +24,10 @@ public class ControladorFactura {
 		return servicioFactura.listar();
 	}
 
-	@PostMapping(value = "/crear-factura")
-	public EntidadFactura crearFactura(@RequestBody FacturaDto factura) {
-		return servicioFactura.crearFactura(factura);
+	@PostMapping(value = "/crear-factura/{idCliente}")
+	public EntidadFactura crearFactura(@PathVariable(value = "idCliente") Long idCliente,
+			@RequestBody FacturaDto factura) {
+		return servicioFactura.crearFactura(factura, idCliente);
 	}
 
 	@GetMapping(value = "/factura/{id}")

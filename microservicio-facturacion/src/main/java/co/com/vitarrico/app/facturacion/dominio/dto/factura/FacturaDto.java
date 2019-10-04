@@ -8,6 +8,8 @@ import co.com.vitarrico.app.facturacion.dominio.dto.item.ItemDto;
 
 public class FacturaDto {
 
+	private Long id;
+	
 	private String descripcion;
 
 	private String observacion;
@@ -17,6 +19,7 @@ public class FacturaDto {
 	private List<ItemDto> items;
 	
 	private Double totalFactura;
+	
 
 	public String getDescripcion() {
 		return descripcion;
@@ -46,8 +49,8 @@ public class FacturaDto {
 		return items;
 	}
 
-	public void addItems(ItemDto item) {
-		this.items.add(item);
+	public void setItems(List<ItemDto> items) {
+		this.items = items;
 	}
 
 	public Double getTotalFactura() {
@@ -56,6 +59,14 @@ public class FacturaDto {
 
 	public void setTotalFactura(Double totalFactura) {
 		this.totalFactura = totalFactura;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 	

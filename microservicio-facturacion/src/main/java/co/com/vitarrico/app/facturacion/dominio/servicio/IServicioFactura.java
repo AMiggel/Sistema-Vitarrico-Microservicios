@@ -9,12 +9,11 @@ public interface IServicioFactura {
 	
 	public List<EntidadFactura> listar();
 
-	public EntidadFactura crearFactura(FacturaDto factura);
+	public EntidadFactura crearFactura(FacturaDto factura,Long idCliente);
 
 	public EntidadFactura buscarFacturaPorId(Long id);
 
 	public void borrarFactura(Long id);
 
-	public EntidadFactura modificarFactura(Long id, EntidadFactura factura);
 
 }

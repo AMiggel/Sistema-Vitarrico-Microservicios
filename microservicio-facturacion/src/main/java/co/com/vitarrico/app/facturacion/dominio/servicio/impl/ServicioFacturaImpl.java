@@ -7,10 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import co.com.vitarrico.app.facturacion.dominio.dto.factura.FacturaDto;
+import co.com.vitarrico.app.facturacion.dominio.dto.feign.ClienteDto;
 import co.com.vitarrico.app.facturacion.dominio.dto.feign.ProductoDto;
 import co.com.vitarrico.app.facturacion.dominio.dto.item.ItemDto;
 import co.com.vitarrico.app.facturacion.dominio.excepcion.ExcepcionFacturas;
 import co.com.vitarrico.app.facturacion.dominio.servicio.IServicioFactura;
+import co.com.vitarrico.app.facturacion.dominio.servicio.feign.ServicioClienteFeign;
 import co.com.vitarrico.app.facturacion.dominio.servicio.feign.ServicioProductoFeign;
 import co.com.vitarrico.app.facturacion.persistencia.entidad.EntidadFactura;
 import co.com.vitarrico.app.facturacion.persistencia.mapper.FacturaMapper;
@@ -33,7 +35,10 @@ public class ServicioFacturaImpl implements IServicioFactura {
 	private ItemFacturaMapper itemFacturaMapper;
 
 	@Autowired
-	private ServicioProductoFeign productoClienteFeign;
+	private ServicioProductoFeign servicioProductoFeign;
+
+	@Autowired
+	private ServicioClienteFeign servicioClienteFeign;
 
 	@Autowired
 	private IRepositorioItemFactura repositorioItemFactura;
@@ -45,21 +50,33 @@ public class ServicioFacturaImpl implements IServicioFactura {
 	}
 
 	@Override
-	public EntidadFactura crearFactura(FacturaDto factura) {
-
+	public EntidadFactura crearFactura(FacturaDto factura, Long idCliente) {
+// items[]
 		for (int i = 0; i < factura.getItems().size(); i++) {
 			ItemDto itemDto = factura.getItems().get(i);
-			ProductoDto producto = productoClienteFeign.buscarProductoPorId(itemDto.getIdProducto());
+			ProductoDto producto = servicioProductoFeign.buscarProductoPorId(itemDto.getIdProducto());
 			validarCantidadDisponible(producto);
 			itemDto.setNombreProducto(producto.getNombre());
 			itemDto.setPrecioProducto(producto.getPrecio());
 			modificarCantidadProductosDisponibles(producto, itemDto);
 			calcularTotalProducto(producto.getPrecio(), itemDto);
+			if(factura.getId() != null) {
 			repositorioItemFactura.save(itemFacturaMapper.mappearDtoAEntidad(itemDto));
+			}
+
 		}
 		calcularTotalFactura(factura.getItems(), factura);
 		asignarFechaCreacion(factura);
-		return repositorioFactura.save(facturaMapper.mappearDtoAEntidad(factura));
+		EntidadFactura entidadFactura = repositorioFactura.save(facturaMapper.mappearDtoAEntidad(factura));
+		asignarFacturaAcliente(factura, idCliente);
+
+		return entidadFactura;
+	}
+
+	public void asignarFacturaAcliente(FacturaDto factura, Long idCliente) {
+		ClienteDto cliente = servicioClienteFeign.buscarClientePorId(idCliente);
+		cliente.addFactura(factura);
+		servicioClienteFeign.modificarClienteDto(cliente.getId(), cliente);
 	}
 
 	@Override
@@ -72,16 +89,10 @@ public class ServicioFacturaImpl implements IServicioFactura {
 		repositorioFactura.deleteById(id);
 	}
 
-	@Override
-	public EntidadFactura modificarFactura(Long id, EntidadFactura factura) {
-		
-		return null;
-	}
-
 	public void modificarCantidadProductosDisponibles(ProductoDto producto, ItemDto item) {
 		Integer restarCantidad = producto.getCantidadDisponible() - item.getCantidadProducto();
 		producto.setCantidadDisponible(restarCantidad);
-		productoClienteFeign.modificarProducto(producto.getId(), producto);
+		servicioProductoFeign.modificarProducto(producto.getId(), producto);
 
 	}
 
@@ -97,18 +108,17 @@ public class ServicioFacturaImpl implements IServicioFactura {
 	}
 
 	public void calcularTotalFactura(List<ItemDto> item, FacturaDto factura) {
-		
+
 		Double total = 0.0;
-		
+
 		for (int i = 0; i < item.size(); i++) {
-			total+=item.get(i).getPrecioTotal();
+			total += item.get(i).getPrecioTotal();
 		}
 		factura.setTotalFactura(total);
 	}
-	
+
 	public void asignarFechaCreacion(FacturaDto factura) {
 		factura.setFechaCreacion(Calendar.getInstance().getTime());
 	}
-	
 
 }
