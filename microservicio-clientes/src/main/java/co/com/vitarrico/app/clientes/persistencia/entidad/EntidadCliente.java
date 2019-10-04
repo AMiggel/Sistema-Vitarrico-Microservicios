@@ -1,6 +1,5 @@
 package co.com.vitarrico.app.clientes.persistencia.entidad;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
