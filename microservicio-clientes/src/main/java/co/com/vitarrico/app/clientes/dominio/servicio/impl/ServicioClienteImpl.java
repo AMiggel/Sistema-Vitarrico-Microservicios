@@ -1,5 +1,6 @@
 package co.com.vitarrico.app.clientes.dominio.servicio.impl;
 
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,18 +32,19 @@ public class ServicioClienteImpl implements IServicioCliente {
 		if (clienteExistente != null) {
 			throw new ExcepcionClientes(YA_EXISTE_CON_ESTE_NOMBRE_Y_APELLIDO);
 		} else {
+			asignarFechaCreacion(cliente);
 			return repositorioCliente.save(cliente);
 		}
 	}
 
 	@Override
 	public EntidadCliente buscarClientePorId(Long id) {
-		
-		EntidadCliente cliente= repositorioCliente.findById(id).orElse(null);
-		if (cliente==null) {
+
+		EntidadCliente cliente = repositorioCliente.findById(id).orElse(null);
+		if (cliente == null) {
 			throw new ExcepcionClientes(CLIENTE_NO_EXISTE);
 		} else {
-		return cliente;
+			return cliente;
 		}
 	}
 
@@ -53,10 +55,14 @@ public class ServicioClienteImpl implements IServicioCliente {
 	}
 
 	@Override
-	public EntidadCliente modificarCliente(Long id, EntidadCliente cliente) {
-		EntidadCliente clienteActual = buscarClientePorId(id);
-		clienteActual.addFactura(cliente.getFacturas().iterator().next());
-		return repositorioCliente.save(clienteActual);
+	public EntidadCliente asignarFacturaACliente(Long id, EntidadCliente cliente) {
+		System.out.println(cliente.getFacturas().iterator().next().getItems());
+		return repositorioCliente.save(cliente);
+	}
+	
+
+	public void asignarFechaCreacion(EntidadCliente cliente) {
+		cliente.setFechaCreacion(Calendar.getInstance().getTime());
 	}
 
 }

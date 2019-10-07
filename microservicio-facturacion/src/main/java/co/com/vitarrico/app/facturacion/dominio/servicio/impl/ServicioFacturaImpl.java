@@ -51,17 +51,17 @@ public class ServicioFacturaImpl implements IServicioFactura {
 
 	@Override
 	public EntidadFactura crearFactura(FacturaDto factura, Long idCliente) {
-// items[]
 		for (int i = 0; i < factura.getItems().size(); i++) {
 			ItemDto itemDto = factura.getItems().get(i);
 			ProductoDto producto = servicioProductoFeign.buscarProductoPorId(itemDto.getIdProducto());
 			validarCantidadDisponible(producto);
 			itemDto.setNombreProducto(producto.getNombre());
 			itemDto.setPrecioProducto(producto.getPrecio());
+			itemDto.setCantidadProducto(50);
 			modificarCantidadProductosDisponibles(producto, itemDto);
 			calcularTotalProducto(producto.getPrecio(), itemDto);
-			if(factura.getId() != null) {
-			repositorioItemFactura.save(itemFacturaMapper.mappearDtoAEntidad(itemDto));
+			if (factura.getId() != null) {
+				repositorioItemFactura.save(itemFacturaMapper.mappearDtoAEntidad(itemDto));
 			}
 
 		}
@@ -76,7 +76,8 @@ public class ServicioFacturaImpl implements IServicioFactura {
 	public void asignarFacturaAcliente(FacturaDto factura, Long idCliente) {
 		ClienteDto cliente = servicioClienteFeign.buscarClientePorId(idCliente);
 		cliente.addFactura(factura);
-		servicioClienteFeign.modificarClienteDto(cliente.getId(), cliente);
+		servicioClienteFeign.asignarFacturaACliente(cliente.getId(), cliente);
+		System.out.println(factura.getItems().iterator().next().getCantidadProducto());
 	}
 
 	@Override

@@ -3,6 +3,7 @@ package co.com.vitarrico.app.clientes.dominio.servicio;
 import java.util.List;
 
 import co.com.vitarrico.app.clientes.persistencia.entidad.EntidadCliente;
+import co.com.vitarrico.app.clientes.persistencia.entidad.feign.EntidadFactura;
 
 
 public interface IServicioCliente {
@@ -15,5 +16,6 @@ public interface IServicioCliente {
 
 	public void borrarCliente(Long id);
 
-	public EntidadCliente modificarCliente(Long id, EntidadCliente cliente);
+	public EntidadCliente asignarFacturaACliente(Long id, EntidadCliente cliente);
+	
 }

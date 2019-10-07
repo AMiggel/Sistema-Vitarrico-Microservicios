@@ -12,7 +12,7 @@ public class EntidadItemFactura {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private Integer cantidad;
+	private Integer cantidadProducto;
 
 	private String nombreProducto;
 
@@ -24,8 +24,8 @@ public class EntidadItemFactura {
 	public EntidadItemFactura() {
 	}
 
-	public EntidadItemFactura(Long id, Integer cantidad, String nombreProducto, Double precioProducto, Double precioTotal) {
-		this.cantidad = cantidad;
+	public EntidadItemFactura(Long id, Integer cantidadProducto, String nombreProducto, Double precioProducto, Double precioTotal) {
+		this.cantidadProducto = cantidadProducto;
 		this.id=id;
 		this.nombreProducto = nombreProducto;
 		this.precioProducto = precioProducto;
@@ -40,12 +40,12 @@ public class EntidadItemFactura {
 		this.id = id;
 	}
 
-	public Integer getCantidad() {
-		return cantidad;
+	public Integer getCantidadProducto() {
+		return cantidadProducto;
 	}
 
-	public void setCantidad(Integer cantidad) {
-		this.cantidad = cantidad;
+	public void setCantidadProducto(Integer cantidadProducto) {
+		this.cantidadProducto = cantidadProducto;
 	}
 
 	public String getNombreProducto() {

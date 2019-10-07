@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.com.vitarrico.app.clientes.dominio.servicio.IServicioCliente;
 import co.com.vitarrico.app.clientes.persistencia.entidad.EntidadCliente;
+import co.com.vitarrico.app.clientes.persistencia.entidad.feign.EntidadFactura;
 
 @RestController
 public class ControladorCliente {
@@ -36,7 +37,7 @@ public class ControladorCliente {
 
 	@PutMapping(value="modificar-cliente/{id}")
 	public EntidadCliente modificarCliente(@PathVariable (value="id")Long id, @RequestBody EntidadCliente cliente) {
-		return servicioCliente.modificarCliente(id, cliente);
+		return servicioCliente.asignarFacturaACliente(id, cliente);
 	}
 
 }
