@@ -2,9 +2,7 @@ package co.com.vitarrico.app.clientes.dominio.servicio;
 
 import java.util.List;
 
-import co.com.vitarrico.app.clientes.persistencia.entidad.EntidadCliente;
-import co.com.vitarrico.app.clientes.persistencia.entidad.feign.EntidadFactura;
-
+import com.vitarrico.app.comun.entidad.EntidadCliente;
 
 public interface IServicioCliente {
 	

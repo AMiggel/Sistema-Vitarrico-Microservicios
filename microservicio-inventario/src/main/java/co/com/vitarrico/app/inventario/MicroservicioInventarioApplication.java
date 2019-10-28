@@ -8,7 +8,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @EnableEurekaClient
 @SpringBootApplication
-@EntityScan({"co.com.vitarrico.app.*"})
+@EntityScan({"com.vitarrico.app.*"})
 public class MicroservicioInventarioApplication {
 
 	public static void main(String[] args) {

@@ -15,6 +15,6 @@ public interface ServicioProductoFeign {
 	@GetMapping(value = "/producto/{id}")
 	public ProductoDto buscarProductoPorId(@PathVariable(value = "id") Long id); 
 
-	@PutMapping(value= "modificar-producto/{id}")
-	public ProductoDto modificarProducto(@PathVariable (value = "id") Long id, @RequestBody ProductoDto producto);
+	@PutMapping(value= "modificar-cantidad/{id}")
+	public ProductoDto modificarCantidadDisponibleProducto(@PathVariable (value = "id") Long id, @RequestBody ProductoDto producto);
 }

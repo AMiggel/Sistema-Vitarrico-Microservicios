@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.vitarrico.app.comun.entidad.EntidadFactura;
+
 import co.com.vitarrico.app.facturacion.dominio.dto.factura.FacturaDto;
 import co.com.vitarrico.app.facturacion.dominio.dto.feign.ClienteDto;
 import co.com.vitarrico.app.facturacion.dominio.dto.feign.ProductoDto;
@@ -14,7 +16,6 @@ import co.com.vitarrico.app.facturacion.dominio.excepcion.ExcepcionFacturas;
 import co.com.vitarrico.app.facturacion.dominio.servicio.IServicioFactura;
 import co.com.vitarrico.app.facturacion.dominio.servicio.feign.ServicioClienteFeign;
 import co.com.vitarrico.app.facturacion.dominio.servicio.feign.ServicioProductoFeign;
-import co.com.vitarrico.app.facturacion.persistencia.entidad.EntidadFactura;
 import co.com.vitarrico.app.facturacion.persistencia.mapper.FacturaMapper;
 import co.com.vitarrico.app.facturacion.persistencia.mapper.ItemFacturaMapper;
 import co.com.vitarrico.app.facturacion.persistencia.repositorio.factura.RepositorioFactura;
@@ -54,10 +55,10 @@ public class ServicioFacturaImpl implements IServicioFactura {
 		for (int i = 0; i < factura.getItems().size(); i++) {
 			ItemDto itemDto = factura.getItems().get(i);
 			ProductoDto producto = servicioProductoFeign.buscarProductoPorId(itemDto.getIdProducto());
-			validarCantidadDisponible(producto);
+			validarCantidadDisponible(producto, itemDto.getCantidadProducto());
+
 			itemDto.setNombreProducto(producto.getNombre());
 			itemDto.setPrecioProducto(producto.getPrecio());
-			itemDto.setCantidadProducto(50);
 			modificarCantidadProductosDisponibles(producto, itemDto);
 			calcularTotalProducto(producto.getPrecio(), itemDto);
 			if (factura.getId() != null) {
@@ -92,13 +93,17 @@ public class ServicioFacturaImpl implements IServicioFactura {
 
 	public void modificarCantidadProductosDisponibles(ProductoDto producto, ItemDto item) {
 		Integer restarCantidad = producto.getCantidadDisponible() - item.getCantidadProducto();
-		producto.setCantidadDisponible(restarCantidad);
-		servicioProductoFeign.modificarProducto(producto.getId(), producto);
+		if (restarCantidad == 0 ) {
+			producto.setCantidadDisponible(0);
+		} else {
+			producto.setCantidadDisponible(restarCantidad);
+		}
+		servicioProductoFeign.modificarCantidadDisponibleProducto(producto.getId(), producto);
 
 	}
 
-	public void validarCantidadDisponible(ProductoDto producto) {
-		if (producto.getCantidadDisponible() <= 0) {
+	public void validarCantidadDisponible(ProductoDto producto, Integer cantidadACrear) {
+		if (cantidadACrear > producto.getCantidadDisponible()) {
 			throw new ExcepcionFacturas(String.format(NO_HAY_PRODUCTOS_DISPONIBLES, producto.getNombre()));
 		}
 	}

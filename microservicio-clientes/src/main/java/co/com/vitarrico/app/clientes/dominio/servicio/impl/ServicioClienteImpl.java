@@ -6,9 +6,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.vitarrico.app.comun.entidad.EntidadCliente;
+
 import co.com.vitarrico.app.clientes.dominio.excepcion.ExcepcionClientes;
 import co.com.vitarrico.app.clientes.dominio.servicio.IServicioCliente;
-import co.com.vitarrico.app.clientes.persistencia.entidad.EntidadCliente;
 import co.com.vitarrico.app.clientes.persistencia.repositorio.RepositorioCliente;
 
 @Service

@@ -4,7 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import co.com.vitarrico.app.clientes.persistencia.entidad.EntidadCliente;
+import com.vitarrico.app.comun.entidad.EntidadCliente;
+
 
 public interface RepositorioCliente extends JpaRepository<EntidadCliente, Long > {
 

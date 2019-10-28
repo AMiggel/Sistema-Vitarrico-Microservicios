@@ -5,8 +5,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import com.vitarrico.app.comun.entidad.EntidadItemFactura;
+
 import co.com.vitarrico.app.facturacion.dominio.dto.item.ItemDto;
-import co.com.vitarrico.app.facturacion.persistencia.entidad.EntidadItemFactura;
 
 @Component
 public class ItemFacturaMapper {

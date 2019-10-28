@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableEurekaClient
 @EnableFeignClients
 @SpringBootApplication
-@EntityScan({"co.com.vitarrico.app.*"})
+@EntityScan({"com.vitarrico.app.*"})
 public class MicroservicioFacturacionApplication {
 
 	public static void main(String[] args) {

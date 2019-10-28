@@ -3,8 +3,9 @@ package co.com.vitarrico.app.facturacion.persistencia.mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.vitarrico.app.comun.entidad.EntidadFactura;
+
 import co.com.vitarrico.app.facturacion.dominio.dto.factura.FacturaDto;
-import co.com.vitarrico.app.facturacion.persistencia.entidad.EntidadFactura;
 
 @Component
 public class FacturaMapper {

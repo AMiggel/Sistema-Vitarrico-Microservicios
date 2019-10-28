@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.vitarrico.app.comun.entidad.EntidadFactura;
+
 import co.com.vitarrico.app.facturacion.dominio.dto.factura.FacturaDto;
 import co.com.vitarrico.app.facturacion.dominio.servicio.IServicioFactura;
-import co.com.vitarrico.app.facturacion.persistencia.entidad.EntidadFactura;
 
 @RestController
 public class ControladorFactura {

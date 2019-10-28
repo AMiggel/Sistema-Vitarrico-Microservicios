@@ -3,24 +3,29 @@ package co.com.vitarrico.app.clientes.controlador;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.vitarrico.app.comun.entidad.EntidadCliente;
+
 import co.com.vitarrico.app.clientes.dominio.servicio.IServicioCliente;
-import co.com.vitarrico.app.clientes.persistencia.entidad.EntidadCliente;
-import co.com.vitarrico.app.clientes.persistencia.entidad.feign.EntidadFactura;
+
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping(value="/clientes")
 public class ControladorCliente {
 	
 	@Autowired
 	IServicioCliente servicioCliente;
 	
-	@GetMapping(value="/clientes")
+	@GetMapping
 	public List<EntidadCliente> listarClientes() {
 		return servicioCliente.listar();
 	}
@@ -30,7 +35,7 @@ public class ControladorCliente {
 		return servicioCliente.crearCliente(cliente);
 	}
 	
-	@GetMapping(value="/cliente/{id}")
+	@GetMapping(value="/{id}")
 	public EntidadCliente buscarCliente(@PathVariable (value="id") Long id) {
 		return servicioCliente.buscarClientePorId(id);
 	}
